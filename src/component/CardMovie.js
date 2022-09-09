@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
-const Card = ({ poster, title, overview, voteAverage, releaseDate, id, popularity, original_language }) => {
+const CardMovie = ({ poster, title, overview, voteAverage, releaseDate, id, popularity, original_language }) => {
   const [showDetail, setShowDetail] = useState(false);
 
   return (
@@ -58,4 +57,4 @@ const Card = ({ poster, title, overview, voteAverage, releaseDate, id, popularit
   );
 };
 
-export default Card;
+export default CardMovie;
