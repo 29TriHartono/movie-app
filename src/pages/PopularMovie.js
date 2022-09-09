@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import CardMovie from '../component/CardMovie';
-
+import ThreeDotsWave from '../component/LoadAnimation';
+import { motion } from 'framer-motion';
 function PopularMovie() {
   const [content, setContent] = useState([]);
   const [searchText, setSearchText] = useState('');
@@ -26,13 +27,15 @@ function PopularMovie() {
   return (
     <div className="flex flex-col gap-6 px-setting my-6 md:my-10 w-full">
       <div className="flex items-center justify-between w-full pb-6">
-        <h2 className=" text_gradient">Popular Movies</h2>
-        <div className=" w-1/2">
+        <motion.h2 animate={{ x: 0 }} initial={{ x: '-100' }} transition={{ duration: 1.4 }} className=" text_gradient">
+          Popular Movies
+        </motion.h2>
+        <motion.div animate={{ x: 0 }} initial={{ x: '100' }} transition={{ duration: 1.4 }} className=" w-1/2">
           <input type="text" className="w-full rounded-md px-2 md:px-4 py-1" label="Search" variant="filled" placeholder="search movies.." onChange={(e) => setSearchText(e.target.value)} />
-        </div>
+        </motion.div>
       </div>
       {loading ? (
-        <h2 className="text-white">wait...</h2>
+        <ThreeDotsWave />
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 items-start gap-6 md:gap-8">
           {content

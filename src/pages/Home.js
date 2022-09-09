@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import PopularMovie from './PopularMovie';
+import ThreeDotsWave from '../component/LoadAnimation';
 
 const Home = () => {
   const [content, setContent] = useState([]);
@@ -30,7 +31,7 @@ const Home = () => {
     <>
       {loading ? (
         <div className="w-full text-white flex items-center justify-center">
-          <h2>Waitt second...</h2>
+          <ThreeDotsWave />
         </div>
       ) : (
         <Swiper
@@ -38,7 +39,7 @@ const Home = () => {
             dynamicBullets: true,
           }}
           loop={true}
-          speed={200}
+          speed={300}
           centeredSlides={true}
           autoplay={{
             delay: 2500,

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export const NavbarLink = [
   {
@@ -12,9 +13,8 @@ export const NavbarLink = [
 ];
 const Navbar = () => {
   return (
-    <div className="z-20 flex items-center justify-between text-white h-16  px-setting">
+    <motion.div animate={{ y: 0 }} initial={{ y: '-100' }} transition={{ duration: 1.4 }} className="z-20 flex items-center justify-between text-white h-16  px-setting">
       <h1 className="text_gradient">Movie Example</h1>
-
       <div className="flex items-center justify-center gap-2">
         {NavbarLink.map((item, index) => {
           return (
@@ -24,7 +24,7 @@ const Navbar = () => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

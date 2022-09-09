@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
